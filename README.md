@@ -14,7 +14,7 @@ The dataset for this project was sourced from **Kaggle**. It includes informatio
 
 ## About Dataset: 
 A detailed breakdown of the dataset structure: 
-![image_alt](images/dataset_info.png)
+<img src="images/dataset_info.png" alt="Dataset Info" width="500"/>
 
 
 ## Data Cleaning & Initial Exploration
