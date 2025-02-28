@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Loan Eligibility Prediction</h1>
+    <div class="form-container">
+        <form id="loanPredictionForm">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="income">Income:</label>
+            <input type="number" id="income" name="income" required>
+
+            <label for="home_ownership">Home Ownership:</label>
+            <select id="home_ownership" name="home_ownership" required>
+                <option value="" selected disabled>Select</option>
+                <option value="Own">Own</option>
+                <option value="Rent">Rent</option>
+                <option value="Mortgage">Mortgage</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="employment_duration">Employment Duration (years):</label>
+            <input type="number" id="employment_duration" name="employment_duration" required>
+
+            <label for="loan_purpose">Loan Purpose:</label>
+            <select id="loan_purpose" name="loan_purpose" required>
+                <option value="" selected disabled>Select</option>
+                <option value="Personal">Personal</option>
+                <option value="Medical">Medical</option>
+                <option value="Education">Education</option>
+                <option value="Venture">Venture</option>
+                <option value="Homeimprovement">Home Improvement</option>
+                <option value="DebtConsolidation">Debt Consolidation</option>
+            </select>
+
+            <label for="loan_grade">Loan Grade:</label>
+            <select id="loan_grade" name="loan_grade" required>
+                <option value="" selected disabled>Select</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+            </select>
+
+            <label for="loan_amount">Loan Amount:</label>
+            <input type="number" id="loan_amount" name="loan_amount" required>
+
+            <label for="interest_rate">Interest Rate:</label>
+            <input type="number" id="interest_rate" name="interest_rate" required step="0.01">
+
+            <label for="loan_income_percentage">Loan Income Percentage:</label>
+            <input type="number" id="loan_income_percentage" name="loan_income_percentage" required step="0.01" min="0" max="100">
+
+            <label for="past_default_status">Past Default Status:</label>
+            <select id="past_default_status" name="past_default_status" required>
+                <option value="" selected disabled>Select</option>
+                <option value="Y">Yes</option>
+                <option value="N">No</option>
+            </select>
+
+            <label for="credit_history_length">Credit History Length:</label>
+            <input type="number" id="credit_history_length" name="credit_history_length" required>
+
+            <button type="submit">Predict Loan Eligibility</button>
+        </form>
+
+        <div class="result" id="result"></div>
+        <div class="error" id="error"></div>
+    </div>
+
+    <script>
+        document.getElementById('loanPredictionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = isNaN(value) ? value : parseFloat(value);
+            });
+
+            fetch('http://127.0.0.1:5000/loan_prediction', { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                if (data.prediction !== undefined) {
+                    const resultText = data.prediction === 0 ? "✅ LOAN APPROVED" : "❌ NOT APPROVED";
+                    document.getElementById('result').innerHTML = resultText;
+                    document.getElementById('error').innerHTML = '';
+                } else {
+                    document.getElementById('result').innerHTML = '';
+                    document.getElementById('error').innerHTML = 'Error: ' + (data.error || 'Unknown error');
+                }
+            })
+            .catch(error => {
+                document.getElementById('result').innerHTML = '';
+                document.getElementById('error').innerHTML = 'Fetch error: ' + error.message;
+            });
+        });
+    </script>
+</body>
+</html>
