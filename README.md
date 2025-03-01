@@ -7,7 +7,7 @@ This project aims to **train and evaluate a machine learning model** to classify
 - [Data Source](#Data-Source)
 - [Data Ethics](#Data-Ethics)
 - [About Dataset](#About-Dataset)
-- [Data Cleaning & Initial Exploration](#Data-Cleaning-&-Initial-Exploration)
+- [Data Cleaning & Initial Exploration](#Data-Cleaning-and-Initial-Exploration)
 - [Data Storage](#Data-Storage)
 - [Credit Risk Prediction Dashboard](#Credit-Risk-Prediction-Dashboard)
 - [Machine Learning Models](#Machine-Learning-Models)
@@ -29,7 +29,7 @@ A detailed breakdown of the dataset structure:
 <img src="images/dataset_info.png" alt="Dataset Info" width="500"/>
 
 
-## Data Cleaning & Initial Exploration
+## Data Cleaning and Initial Exploration
 
 Before conducting analysis, we **cleaned the data** to ensure its quality and consistency. 
 
