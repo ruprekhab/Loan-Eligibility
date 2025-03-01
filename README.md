@@ -5,8 +5,8 @@ This project aims to **train and evaluate a machine learning model** to classify
 
 ## Table of Contents
 - [Overview](#Overview)
-- [Data Ethics](#DataEthics)
-- [About Dataset](#AboutDataset)
+- [Data Ethics](#Data-Ethics)
+- [About Dataset](#About-Dataset)
 - [Features](#features)
 - [Data Sources](#data-sources)
 - [Model Selection](#model-selection)
