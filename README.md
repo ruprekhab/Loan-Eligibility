@@ -129,6 +129,7 @@ Objective: Identifying factors that influence loan defaults.
  * Optimizer: Adam
  * Metrics: Accuracy
  * Epochs: 50
+ 
 **Results:**
  * Accuracy: 92%
  * Loss: 25%
@@ -148,6 +149,7 @@ Objective: Identifying factors that influence loan defaults.
  * Optimizer: Adam
  * Metrics: Accuracy
  * Epochs: 50
+
 **Results:**
  * Accuracy: 91%
  * Loss: 27%
@@ -167,6 +169,7 @@ Objective: Identifying factors that influence loan defaults.
  * Optimizer: Adam
  * Metrics: Accuracy
  * Epochs: 100
+
 **Results:**
  * Accuracy: 91%
  * Loss: 33%
