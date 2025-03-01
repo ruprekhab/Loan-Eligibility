@@ -4,17 +4,18 @@
 This project aims to **train and evaluate a machine learning model** to classify loans as either **'approved' or 'not-approved'**, based on borrowers' **demographic and financial data**.
 
 ## Table of Contents
-- [Overview](#Overview)
+- [Data Source](#Data-Source)
 - [Data Ethics](#Data-Ethics)
 - [About Dataset](#About-Dataset)
-- [Features](#features)
-- [Data Sources](#data-sources)
-- [Model Selection](#model-selection)
-- [Results](#results)
-- [Conclusion](#conclusion)
-- [References](#references)
+- [Data Cleaning & Initial Exploration](#Data-Cleaning-&-Initial-Exploration)
+- [Data Storage](#Data-Storage)
+- [Credit Risk Prediction Dashboard](#Credit-Risk-Prediction-Dashboard)
+- [Machine Learning Models](#Machine-Learning-Models)
+- [Conclusion](#Conclusion)
+- [Instructions for Using the Project](#Instructions-for-Using-the-Project)
+- [Technologies Used](#Technologies-Used)
 
-## Datasourse: 
+## Data Sourse: 
 The dataset for this project was sourced from **Kaggle**. It includes information on customer demographics and financial details.  
 **Dataset Link:** [Credit Risk Dataset on Kaggle](https://www.kaggle.com/datasets/laotse/credit-risk-dataset)
 
@@ -156,7 +157,7 @@ Loss: 33%
 #### Logistic Regression
 #### Random Forest
 #### XGBoost
-## Result Summary
+## Conclusion
 After evaluating multiple models, XGBoost was selected for the application due to its 94% accuracy—the highest among all tested models. While Random Forest performed comparably, XGBoost consistently outperformed it across most evaluation metrics. Additionally, XGBoost offers an optimal balance between high accuracy and interpretability, making it a practical choice. Its efficiency in execution further enhances its suitability for real-time applications, ensuring faster predictions without compromising performance.
 
 ## Instructions for Using the Project
