@@ -4,16 +4,34 @@
 This project aims to **train and evaluate a machine learning model** to classify loans as either **'approved' or 'not-approved'**, based on borrowers' **demographic and financial data**.
 
 ## Table of Contents
+- [Instructions for Using the Project](#Instructions-for-Using-the-Project)
 - [Data Source](#Data-Source)
 - [Data Ethics](#Data-Ethics)
 - [About Dataset](#About-Dataset)
-- [Data Cleaning & Initial Exploration](#Data-Cleaning-and-Initial-Exploration)
+- [Data Cleaning and Initial Exploration](#Data-Cleaning-and-Initial-Exploration)
 - [Data Storage](#Data-Storage)
 - [Credit Risk Prediction Dashboard](#Credit-Risk-Prediction-Dashboard)
 - [Machine Learning Models](#Machine-Learning-Models)
 - [Conclusion](#Conclusion)
-- [Instructions for Using the Project](#Instructions-for-Using-the-Project)
 - [Technologies Used](#Technologies-Used)
+
+## Instructions for Using the Project
+1. Clone the Repository: git clone 
+https://github.com/ruprekhab/Loan-Eligibility.git
+
+2. Set Up the Environment:
+
+Install the required Python libraries: 
+<p> pip install -r installed_packages.txt
+
+Ensure PostgreSQL is installed and running. Import the database schema from schema.sql file and data using the CSV files in the output folder.
+
+3. Run the Flask Application:
+
+* Start the Flask server: python app2.py
+* Ensure you have configured your database connection properly. Use your PostgreSQL password in the password field of your configuration
+Access the API at http://localhost:5000/. 
+View and interact with the Application: Open the index.html file in your web browser. Fill up the form and click "Predict Loan Eligibility".
 
 ## Data Sourse: 
 The dataset for this project was sourced from **Kaggle**. It includes information on customer demographics and financial details.  
@@ -160,23 +178,7 @@ Loss: 33%
 ## Conclusion
 After evaluating multiple models, XGBoost was selected for the application due to its 94% accuracy—the highest among all tested models. While Random Forest performed comparably, XGBoost consistently outperformed it across most evaluation metrics. Additionally, XGBoost offers an optimal balance between high accuracy and interpretability, making it a practical choice. Its efficiency in execution further enhances its suitability for real-time applications, ensuring faster predictions without compromising performance.
 
-## Instructions for Using the Project
-1. Clone the Repository: git clone 
-https://github.com/ruprekhab/Loan-Eligibility.git
 
-2. Set Up the Environment:
-
-Install the required Python libraries: 
-<p> pip install -r installed_packages.txt
-
-Ensure PostgreSQL is installed and running. Import the database schema from schema.sql file and data using the CSV files in the output folder.
-
-3. Run the Flask Application:
-
-* Start the Flask server: python app2.py
-* Ensure you have configured your database connection properly. Use your PostgreSQL password in the password field of your configuration
-Access the API at http://localhost:5000/. 
-View and interact with the Application: Open the index.html file in your web browser. Fill up the form and click "Predict Loan Eligibility".
 
 ## Technologies Used
 **Languages:** Python, SQL, HTML, JavaScript
