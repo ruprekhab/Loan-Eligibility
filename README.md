@@ -3,6 +3,17 @@
 ## Overview 
 This project aims to **train and evaluate a machine learning model** to classify loans as either **'approved' or 'not-approved'**, based on borrowers' **demographic and financial data**.
 
+## Table of Contents
+- [Overview](#Overview)
+- [Data Ethics](#DataEthics)
+- [About Dataset](#AboutDataset)
+- [Features](#features)
+- [Data Sources](#data-sources)
+- [Model Selection](#model-selection)
+- [Results](#results)
+- [Conclusion](#conclusion)
+- [References](#references)
+
 ## Datasourse: 
 The dataset for this project was sourced from **Kaggle**. It includes information on customer demographics and financial details.  
 **Dataset Link:** [Credit Risk Dataset on Kaggle](https://www.kaggle.com/datasets/laotse/credit-risk-dataset)
@@ -83,8 +94,8 @@ Objective: Identifying factors that influence loan defaults.
 * **Preprocess the data:**
     - Target variable (y): loan_status
     - Features variable (X): person_age, person_income, person_home_ownership, person_emp_length, loan_intent, loan_grade, loan_amnt, loan_int_rate, loan_status, loan_percent_income, cb_person_default_on_file, cb_preson_cred_hist_length.
-* **Encoding:** Used pd.get_dummies() for categorical variables.
-* **Splitting Data:** Used train_test_split() to split data into training and testing sets.
+    * **Encoding:** Used pd.get_dummies() for categorical variables.
+    * **Splitting Data:** Used train_test_split() to split data into training and testing sets.
 
 **Model 1: Initial Deep Learning Model**
 **Architecture**
