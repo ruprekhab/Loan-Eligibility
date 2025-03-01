@@ -119,58 +119,59 @@ Objective: Identifying factors that influence loan defaults.
 **Model 1: Initial Deep Learning Model**
 **Architecture**
 
-First Layer: 52 Neurons, Activation: ReLU
-Second Layer: 26 Neurons, Activation: ReLU
-Output Layer: 1 Neuron, Activation: Sigmoid
+<p>First Layer: 52 Neurons, Activation: ReLU
+<p>Second Layer: 26 Neurons, Activation: ReLU
+<p>Output Layer: 1 Neuron, Activation: Sigmoid
 ![image_alt](images/DL_model1.png)
 
 **Training & Evaluation**
 
-Loss Function: Binary Crossentropy
-Optimizer: Adam
-Metrics: Accuracy
-Epochs: 50
-Results:
-Accuracy: 92%
-Loss: 25%
+<p>Loss Function: Binary Crossentropy
+<p>Optimizer: Adam
+<p>Metrics: Accuracy
+<p>Epochs: 50
+<p>Results:
+<p>Accuracy: 92%
+<p>Loss: 25%
+
 **Optimization 1: Add Additional Hidden Layer**
 
 **Architecture**
 
-First Layer: 52 Neurons, Activation: ReLU
-Second Layer: 26 Neurons, Activation: ReLU
-Second Layer: 13DL Neurons, Activation: ReLU
-Output Layer: 1 Neuron, Activation: Sigmoid
+<p>First Layer: 52 Neurons, Activation: ReLU
+<p>Second Layer: 26 Neurons, Activation: ReLU
+<p>Second Layer: 13DL Neurons, Activation: ReLU
+<p>Output Layer: 1 Neuron, Activation: Sigmoid
 ![image_alt](images/optimization1_DL.png)
 
 **Training & Evaluation**
 
-Loss Function: Binary Crossentropy
-Optimizer: Adam
-Metrics: Accuracy
-Epochs: 50
-Results:
-Accuracy: 91%
-Loss: 27%
+<p>Loss Function: Binary Crossentropy
+<p>Optimizer: Adam
+<p>Metrics: Accuracy
+<p>Epochs: 50
+<p>Results:
+<p>Accuracy: 91%
+<p>Loss: 27%
 
 **Optimization 2: Increase epochs to 100**
 **Architecture**
 
-First Layer: 52 Neurons, Activation: ReLU
-Second Layer: 26 Neurons, Activation: ReLU
-Second Layer: 13 Neurons, Activation: ReLU
-Output Layer: 1 Neuron, Activation: Sigmoid
+<p>First Layer: 52 Neurons, Activation: ReLU
+<p>Second Layer: 26 Neurons, Activation: ReLU
+<p>Second Layer: 13 Neurons, Activation: ReLU
+<p>Output Layer: 1 Neuron, Activation: Sigmoid
 ![image_alt](images/DL_optimization2.png)
 
 **Training & Evaluation**
 
-Loss Function: Binary Crossentropy
-Optimizer: Adam
-Metrics: Accuracy
-Epochs: 100
-Results:
-Accuracy: 91%
-Loss: 33%
+<p>Loss Function: Binary Crossentropy
+<p>Optimizer: Adam
+<p>Metrics: Accuracy
+<p>Epochs: 100
+<p>Results:
+<p>Accuracy: 91%
+<p>Loss: 33%
 
 #### Logistic Regression
 #### Random Forest
