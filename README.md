@@ -99,12 +99,12 @@ Objective: Identifying factors that influence loan defaults.
 **Non-Default Cases:** 23,530
 
 **Key Insights**
-**Loan Purpose:** Majority of the loans were taken for **education**, followed by **medical expenses**. Loans for **home improvement** had the fewest borrowers (11%).  
-**Credit History:** A **shorter credit history** is linked to **higher default rates**.  
-**Interest Rates:** **Higher interest rates** correlate with **increased default risk**.  
-**Employment & Homeownership:** Borrowers with **longer employment history and homeownership** tend to **default less**.  
-**Loan Intent & Default Risk:** Loans taken for **educational purposes** show **higher default risks**.  
-**Loan Grade:** **Grade C** had the **highest number of defaulters**.  
+ * **Loan Purpose:** Majority of the loans were taken for **education**, followed by **medical expenses**. Loans for **home improvement** had the fewest borrowers (11%).  
+ * **Credit History:** A **shorter credit history** is linked to **higher default rates**.  
+ * **Interest Rates:** **Higher interest rates** correlate with **increased default risk**.  
+ * **Employment & Homeownership:** Borrowers with **longer employment history and homeownership** tend to **default less**.  
+ * **Loan Intent & Default Risk:** Loans taken for **educational purposes** show **higher default risks**.  
+ * **Loan Grade:** **Grade C** had the **highest number of defaulters**.  
 
 
 ## Machine Learning Models:
@@ -179,14 +179,14 @@ Objective: Identifying factors that influence loan defaults.
 <p>Model Evaluation: Accuracy, confusion matrix, and classification report are used to evaluate the model's performance on both training and testing data.
 <p>The following steps were followed for this model:
 
-1. Data Preprocessing:
+* Data Preprocessing:
 Categorical columns (home_ownership, loan_purpose, loan_grade, past_default_status) are converted into numerical data using pd.get_dummies.
-2. Splitting Data:
+* Splitting Data:
 The dataset is split into training and testing sets using train_test_split from sklearn.
-3. Features are scaled using StandardScaler to ensure the data is on a comparable scale.
-4. Model Training:
+* Features are scaled using StandardScaler to ensure the data is on a comparable scale.
+* Model Training:
 A Logistic Regression model is created with the lbfgs solver and a maximum of 200 iterations. It is then trained on the scaled training data.
-5. Model Evaluation:
+* Model Evaluation:
 The model is evaluated using accuracy scores on both the training and testing data.
 A confusion matrix and classification report are printed to assess the model's performance on the test data.
 The Logistic Regression model achieved an accuracy of 86.66%.
@@ -218,28 +218,28 @@ The Logistic Regression model achieved an accuracy of 86.66%.
 
 ### XGBoost
 
-1. Data Preprocessing
+* Data Preprocessing
 This involves loading the dataset, removing the rows with missing values or outliers and converting categorical values using get_dummies. The loan status is defined as our target variable and the other columns are defined as the features. 
-2. Data Splitting into Training and Testing Sets
+* Data Splitting into Training and Testing Sets
 The clean data is then split into training and testing data sets
-3. Data training using XGBoost
+* Data training using XGBoost
 The model is initialized with the XGBClassifier where parameters such as number of decision trees (n_estimators), learning rate and maximum depth can be input. These values were be changed to optimize the model and improve the accuracy score. However, if no parameters are passed, the model takes the default parameters. For our model, the highest accuracy score was obtained when no parameters were passed. The accuracy score with XGBoost model is 93.5%.
 XGBoost builds trees sequentially.Each tree corrects errors from the previous tree. Residual error is computed and the loss function is minimized.
-4. Model Evaluation
+* Model Evaluation
 Using the model predictions, the accuracy score is calculated and the classification report is generated.Feature importance analysis can also be done. As per our the feature importance, income plays a crucial in predicting the loan eligibility for XGBoost model.
 
 ## Model Comparison
 The following models were evaluated:
-1. XGBoost
+* XGBoost
 XGBoost achieved the highest accuracy among all models (93.5%). It has a strong performance in detecting non-defaulters (precision of 0.93 for Loan Status 0) while maintaining reasonable performance for defaulters (F1-Score of 0.83).
 The recall for Loan Status 0 (0.99) is very high, meaning the model is excellent at correctly predicting eligible applicants, but it could be improved in predicting defaults (Loan Status 1).
-2. Random Forest
+* Random Forest
 Random Forest also performed well with an accuracy of 93.2%. Like XGBoost, it shows high precision for Loan Status 0 (0.93) and a solid F1-Score for Loan Status 1 (0.82).
 The model is very good at predicting eligible applicants but has a slightly lower recall for defaulters than XGBoost, suggesting some room for improvement in identifying defaults.
-3. Logistic Regression
+* Logistic Regression
 Logistic Regression, while interpretable, falls behind in accuracy with 86.66%. Its precision for non-defaulters is solid (0.88), but the recall for defaulters (0.55) is significantly lower, leading to poorer performance in predicting defaults (F1-Score of 0.64).
 This model may be useful for explaining relationships between features and loan eligibility, but its lower accuracy makes it less reliable for real-world loan eligibility prediction.
-4. Deep Learning
+* Deep Learning
 Deep Learning offers a good balance between accuracy (90.72%) and F1-Score for both classes. It has a solid F1-Score of 0.94 for non-defaulters and a slightly better F1-Score for defaulters than Logistic Regression (0.77).
 Although deep learning models are generally computationally expensive and require more data, this model's performance suggests it could be a viable option when there's enough data and computational resources.
 
