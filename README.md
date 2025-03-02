@@ -230,16 +230,16 @@ Using the model predictions, the accuracy score is calculated and the classifica
 
 ## Model Comparison
 The following models were evaluated:
-* XGBoost
+* XGBoost:
 XGBoost achieved the highest accuracy among all models (93.5%). It has a strong performance in detecting non-defaulters (precision of 0.93 for Loan Status 0) while maintaining reasonable performance for defaulters (F1-Score of 0.83).
 The recall for Loan Status 0 (0.99) is very high, meaning the model is excellent at correctly predicting eligible applicants, but it could be improved in predicting defaults (Loan Status 1).
-* Random Forest
+* Random Forest:
 Random Forest also performed well with an accuracy of 93.2%. Like XGBoost, it shows high precision for Loan Status 0 (0.93) and a solid F1-Score for Loan Status 1 (0.82).
 The model is very good at predicting eligible applicants but has a slightly lower recall for defaulters than XGBoost, suggesting some room for improvement in identifying defaults.
-* Logistic Regression
+* Logistic Regression:
 Logistic Regression, while interpretable, falls behind in accuracy with 86.66%. Its precision for non-defaulters is solid (0.88), but the recall for defaulters (0.55) is significantly lower, leading to poorer performance in predicting defaults (F1-Score of 0.64).
 This model may be useful for explaining relationships between features and loan eligibility, but its lower accuracy makes it less reliable for real-world loan eligibility prediction.
-* Deep Learning
+* Deep Learning:
 Deep Learning offers a good balance between accuracy (90.72%) and F1-Score for both classes. It has a solid F1-Score of 0.94 for non-defaulters and a slightly better F1-Score for defaulters than Logistic Regression (0.77).
 Although deep learning models are generally computationally expensive and require more data, this model's performance suggests it could be a viable option when there's enough data and computational resources.
 
