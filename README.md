@@ -115,6 +115,8 @@ Objective: Identifying factors that influence loan defaults.
     - Features variable (X): person_age, person_income, person_home_ownership, person_emp_length, loan_intent, loan_grade, loan_amnt, loan_int_rate, loan_status, loan_percent_income, cb_person_default_on_file, cb_preson_cred_hist_length.
     * **Encoding:** Used pd.get_dummies() for categorical variables.
     * **Splitting Data:** Used train_test_split() to split data into training and testing sets.
+    * **Standard Scaler:**Features are scaled using StandardScaler to ensure the data is on a comparable scale.
+    
 
 **Model 1: Initial Deep Learning Model**
 **Architecture**
@@ -197,15 +199,11 @@ The Logistic Regression model achieved an accuracy of 86.66%.
 - **Target Variable (y):** `loan_status`
 - **Feature Variables (X):**  
   `person_age`, `person_income`, `person_home_ownership`, `person_emp_length`, `loan_intent`, `loan_grade`, `loan_amnt`, `loan_int_rate`, `loan_status`, `loan_percent_income`, `cb_person_default_on_file`, `cb_person_cred_hist_length`
-
+- **Encoding:** Used pd.get_dummies() for categorical variables.
 **Splitting the Data**
 - Used `train_test_split()` to divide the dataset into training and testing sets.
+- Features are scaled using StandardScaler to ensure the data is on a comparable scale.
 
-**Training the Random Forest Model**
-- Created a **ColumnTransformer** with `OneHotEncoder` for categorical features:
-  1. **One-Hot Encoding** – Converts categorical data into binary columns.
-  2. **StandardScaler** – Standardizes numeric data for consistency.
-  3. **Preprocessing Pipeline** – Automates encoding and scaling.
 
 **Fitting the Random Forest Model**
 - Created a **Random Forest Classifier** with:
@@ -213,7 +211,7 @@ The Logistic Regression model achieved an accuracy of 86.66%.
   - `random_state=78`
 
 **Results**
-- **Accuracy Score:** `0.9324`  
+- **Accuracy Score:** `0.92`  
 
 
 ### XGBoost
