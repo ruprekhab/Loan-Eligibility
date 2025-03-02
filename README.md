@@ -174,18 +174,102 @@ Objective: Identifying factors that influence loan defaults.
  * Accuracy: 91%
  * Loss: 33%
 
-#### Logistic Regression
-#### Random Forest
-#### XGBoost
+### Logistic Regression
+<p>Model Training: A Logistic Regression model is trained on the data, and its performance is evaluated using various metrics.
+<p>Model Evaluation: Accuracy, confusion matrix, and classification report are used to evaluate the model's performance on both training and testing data.
+<p>The following steps were followed for this model:
+
+1. Data Preprocessing:
+Categorical columns (home_ownership, loan_purpose, loan_grade, past_default_status) are converted into numerical data using pd.get_dummies.
+2. Splitting Data:
+The dataset is split into training and testing sets using train_test_split from sklearn.
+3. Features are scaled using StandardScaler to ensure the data is on a comparable scale.
+4. Model Training:
+A Logistic Regression model is created with the lbfgs solver and a maximum of 200 iterations. It is then trained on the scaled training data.
+5. Model Evaluation:
+The model is evaluated using accuracy scores on both the training and testing data.
+A confusion matrix and classification report are printed to assess the model's performance on the test data.
+The Logistic Regression model achieved an accuracy of 86.66%.
+
+
+### Random Forest
+**Preprocessing the Data**
+- **Target Variable (y):** `loan_status`
+- **Feature Variables (X):**  
+  `person_age`, `person_income`, `person_home_ownership`, `person_emp_length`, `loan_intent`, `loan_grade`, `loan_amnt`, `loan_int_rate`, `loan_status`, `loan_percent_income`, `cb_person_default_on_file`, `cb_person_cred_hist_length`
+
+**Splitting the Data**
+- Used `train_test_split()` to divide the dataset into training and testing sets.
+
+**Training the Random Forest Model**
+- Created a **ColumnTransformer** with `OneHotEncoder` for categorical features:
+  1. **One-Hot Encoding** – Converts categorical data into binary columns.
+  2. **StandardScaler** – Standardizes numeric data for consistency.
+  3. **Preprocessing Pipeline** – Automates encoding and scaling.
+
+**Fitting the Random Forest Model**
+- Created a **Random Forest Classifier** with:
+  - `n_estimators=500`
+  - `random_state=78`
+
+**Results**
+- **Accuracy Score:** `0.9324`  
+
+
+### XGBoost
+
+1. Data Preprocessing
+This involves loading the dataset, removing the rows with missing values or outliers and converting categorical values using get_dummies. The loan status is defined as our target variable and the other columns are defined as the features. 
+2. Data Splitting into Training and Testing Sets
+The clean data is then split into training and testing data sets
+3. Data training using XGBoost
+The model is initialized with the XGBClassifier where parameters such as number of decision trees (n_estimators), learning rate and maximum depth can be input. These values were be changed to optimize the model and improve the accuracy score. However, if no parameters are passed, the model takes the default parameters. For our model, the highest accuracy score was obtained when no parameters were passed. The accuracy score with XGBoost model is 93.5%.
+XGBoost builds trees sequentially.Each tree corrects errors from the previous tree. Residual error is computed and the loss function is minimized.
+4. Model Evaluation
+Using the model predictions, the accuracy score is calculated and the classification report is generated.Feature importance analysis can also be done. As per our the feature importance, income plays a crucial in predicting the loan eligibility for XGBoost model.
+
+## Model Comparison
+The following models were evaluated:
+1. XGBoost
+XGBoost achieved the highest accuracy among all models (93.5%). It has a strong performance in detecting non-defaulters (precision of 0.93 for Loan Status 0) while maintaining reasonable performance for defaulters (F1-Score of 0.83).
+The recall for Loan Status 0 (0.99) is very high, meaning the model is excellent at correctly predicting eligible applicants, but it could be improved in predicting defaults (Loan Status 1).
+2. Random Forest
+Random Forest also performed well with an accuracy of 93.2%. Like XGBoost, it shows high precision for Loan Status 0 (0.93) and a solid F1-Score for Loan Status 1 (0.82).
+The model is very good at predicting eligible applicants but has a slightly lower recall for defaulters than XGBoost, suggesting some room for improvement in identifying defaults.
+3. Logistic Regression
+Logistic Regression, while interpretable, falls behind in accuracy with 86.66%. Its precision for non-defaulters is solid (0.88), but the recall for defaulters (0.55) is significantly lower, leading to poorer performance in predicting defaults (F1-Score of 0.64).
+This model may be useful for explaining relationships between features and loan eligibility, but its lower accuracy makes it less reliable for real-world loan eligibility prediction.
+4. Deep Learning
+Deep Learning offers a good balance between accuracy (90.72%) and F1-Score for both classes. It has a solid F1-Score of 0.94 for non-defaulters and a slightly better F1-Score for defaulters than Logistic Regression (0.77).
+Although deep learning models are generally computationally expensive and require more data, this model's performance suggests it could be a viable option when there's enough data and computational resources.
+
 ## Conclusion
-After evaluating multiple models, XGBoost was selected for the application due to its 94% accuracy—the highest among all tested models. While Random Forest performed comparably, XGBoost consistently outperformed it across most evaluation metrics. Additionally, XGBoost offers an optimal balance between high accuracy and interpretability, making it a practical choice. Its efficiency in execution further enhances its suitability for real-time applications, ensuring faster predictions without compromising performance.
+After evaluating multiple models, XGBoost was selected for the application due to its 94% accuracy—the highest among all tested models. 
+While Random Forest performed comparably, XGBoost consistently outperformed it across most evaluation metrics. Additionally, XGBoost offers an optimal balance between high accuracy and interpretability, making it a practical choice. 
+Its efficiency in execution further enhances its suitability for real-time applications, ensuring faster predictions without compromising performance.
+
+## Application Programming Interface (API)
+This repository contains a Flask-based API for predicting loan eligibility using a trained XGBoost model. The API accepts loan application data, processes it, and returns a prediction on whether a loan should be approved or not based on various features. The features to input are Age, Income, Loan Amount, Employment Duration, Credit History Length, Loan Grade, Loan Purpose, Home Ownership, Loan Income Percentage and Past Default Status.
+The API involves data Preprocessing which deals with categorical features such as home_ownership, loan_grade to prepare the data for the prediction. It also uses a XGBoost model for its efficiency and performance on structured data.
+The home end point just displays a message that the API is running. The main API endpoint is /loan_prediction, which accepts POST requests with JSON data containing loan application details.
+
+
+## HTML
+This webpage allows users to input their personal and financial details to predict their loan eligibility. It sends the form data to the backend Flask API, which processes the information and returns whether the loan is approved or not.
+Input fields are age, income, home ownership, employment duration, loan purpose, loan grade, loan amount, interest rate, past default status, and credit history length.
+**How to Use:**
+Fill in the form with your details.
+Click the "Predict Loan Eligibility" button.
+The prediction result will be displayed below the form.
+**Setup:**
+For the webpage to run properly, the Flask backend must be running on http://127.0.0.1:5000
 
 
 
 ## Technologies Used
-**Languages:** Python, SQL, HTML, JavaScript
+**Languages:** Python, SQL, HTML, CSS, JavaScript
 
-**Libraries/Packages:** Pandas, NumPy, SKLearn, Tensoreflow, Keras, Psycopg2, SQLAlchemy, Flask, Matplotlib, Seaborn, XGBoost, Joblib
+**Libraries/Packages:** Pandas, NumPy, SKLearn, Tensoreflow, Keras, Psycopg2, SQLAlchemy, Flask (Python API), Matplotlib, Seaborn, XGBoost, Joblib
 
 **Database:** PostgreSQL
 
