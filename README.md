@@ -22,31 +22,27 @@ This repository contains all the necessary files and scripts for a loan eligibil
 
 * **all_models/**  
 This folder contains scripts for various machine learning models, including:  
-- Deep Learning  
-- Logistic Regression  
-- Random Forest  
-- XGBoost  
+  - Deep Learning  
+  - Logistic Regression  
+  - Random Forest  
+  - XGBoost  
 
 * **app_files/**  
 Contains files required for the web application and API:  
-- **App2.py** – API script for predicting loan eligibility using the trained XGBoost model.  
-- **feature_columns.pkl** – Stores feature column names in `.pkl` format, used to process user-inputted features.  
-- **xgboost_model.pkl** – Trained XGBoost model saved in `.pkl` format for making predictions.  
-- **index.html** – Webpage script where users input personal and financial details to predict loan eligibility.  
+  - **App2.py** – API script for predicting loan eligibility using the trained XGBoost model.  
+  - **feature_columns.pkl** – Stores feature column names in `.pkl` format, used to process user-inputted features.  
+  - **xgboost_model.pkl** – Trained XGBoost model saved in `.pkl` format for making predictions.  
+  - **index.html** – Webpage script where users input personal and financial details to predict loan eligibility.  
 
 * **Images/** :Stores images.  
 
-* **Resource/**/:  
-Contains raw and cleaned CSV files used for data processing and analysis.  
+* **Resource/**/: Contains raw and cleaned CSV files used for data processing and analysis.  
 
-* **data_cleaning.ipynb**:  
-Jupyter Notebook for cleaning raw data and preparing it for analysis and model training.  
+* **data_cleaning.ipynb**: upyter Notebook for cleaning raw data and preparing it for analysis and model training.  
 
-* **ERD.sql**:  
-SQL schema used for setting up the PostgreSQL database.  
+* **ERD.sql**: SQL schema used for setting up the PostgreSQL database.  
 
-* **Installed_packages.txt**:  
-List of required Python packages for the project. 
+* **Installed_packages.txt**: List of required Python packages for the project. 
 
 ## Instructions for Using the Project
 1. Clone the Repository: git clone 
