@@ -247,6 +247,7 @@ Input fields are age, income, home ownership, employment duration, loan purpose,
 Fill in the form with your details.
 Click the "Predict Loan Eligibility" button.
 The prediction result will be displayed below the form.
+
 **Setup:**
 For the webpage to run properly, the Flask backend must be running on http://127.0.0.1:5000
 
