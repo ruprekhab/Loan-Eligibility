@@ -108,16 +108,16 @@ Objective: Identifying factors that influence loan defaults.
 
 
 ## Machine Learning Models:
-To test the machine learning models, data was retrieved from PostgreSQL using SQLAlchemy.
-
-### Deep learning
+To test the machine learning models, data was retrieved from PostgreSQL using SQLAlchemy. 
 * **Preprocess the data:**
-    - Target variable (y): loan_status
-    - Features variable (X): person_age, person_income, person_home_ownership, person_emp_length, loan_intent, loan_grade, loan_amnt, loan_int_rate, loan_status, loan_percent_income, cb_person_default_on_file, cb_preson_cred_hist_length.
+    * Target variable (y): loan_status
+    * Features variable (X): person_age, person_income, person_home_ownership, person_emp_length, loan_intent, loan_grade, loan_amnt, loan_int_rate, loan_status, loan_percent_income, cb_person_default_on_file, cb_preson_cred_hist_length.
     * **Encoding:** Used pd.get_dummies() for categorical variables.
     * **Splitting Data:** Used train_test_split() to split data into training and testing sets.
-    * **Standard Scaler:** Features are scaled using StandardScaler to ensure the data is on a comparable scale.
-    
+    * **Standard Scaler:** Features are scaled using StandardScaler to ensure the data is on a comparable scale. Standard Scaler was used for Deep Learning, Random Forest and Logistic Regression.
+
+### Deep learning
+  
 
 **Model 1: Initial Deep Learning Model**
 **Architecture**
@@ -182,11 +182,6 @@ To test the machine learning models, data was retrieved from PostgreSQL using SQ
 <p>Model Evaluation: Accuracy, confusion matrix, and classification report are used to evaluate the model's performance on both training and testing data.
 <p>The following steps were followed for this model:
 
-* Data Preprocessing:
-Categorical columns (home_ownership, loan_purpose, loan_grade, past_default_status) are converted into numerical data using pd.get_dummies.
-* Splitting Data:
-The dataset is split into training and testing sets using train_test_split from sklearn.
-* Features are scaled using StandardScaler to ensure the data is on a comparable scale.
 * Model Training:
 A Logistic Regression model is created with the lbfgs solver and a maximum of 200 iterations. It is then trained on the scaled training data.
 * Model Evaluation:
@@ -196,15 +191,6 @@ The Logistic Regression model achieved an accuracy of 86.66%.
 
 
 ### Random Forest
-**Preprocessing the Data**
-- **Target Variable (y):** `loan_status`
-- **Feature Variables (X):**  
-  `person_age`, `person_income`, `person_home_ownership`, `person_emp_length`, `loan_intent`, `loan_grade`, `loan_amnt`, `loan_int_rate`, `loan_status`, `loan_percent_income`, `cb_person_default_on_file`, `cb_person_cred_hist_length`
-- **Encoding:** Used pd.get_dummies() for categorical variables.
-**Splitting the Data**
-- Used `train_test_split()` to divide the dataset into training and testing sets.
-- Features are scaled using StandardScaler to ensure the data is on a comparable scale.
-
 
 **Fitting the Random Forest Model**
 - Created a **Random Forest Classifier** with:
@@ -218,9 +204,9 @@ The Logistic Regression model achieved an accuracy of 86.66%.
 ### XGBoost
 
 * Data Preprocessing
-This involves loading the dataset, removing the rows with missing values or outliers and converting categorical values using get_dummies. The loan status is defined as our target variable and the other columns are defined as the features. 
+This involves loading the dataset, converting categorical values using get_dummies. The loan status is defined as our target variable and the other columns are defined as the features. 
 * Data Splitting into Training and Testing Sets
-The clean data is then split into training and testing data sets
+The processed data is then split into training and testing data sets
 * Data training using XGBoost
 The model is initialized with the XGBClassifier where parameters such as number of decision trees (n_estimators), learning rate and maximum depth can be input. These values were be changed to optimize the model and improve the accuracy score. However, if no parameters are passed, the model takes the default parameters. For our model, the highest accuracy score was obtained when no parameters were passed. The accuracy score with XGBoost model is 93.5%.
 XGBoost builds trees sequentially.Each tree corrects errors from the previous tree. Residual error is computed and the loss function is minimized.
