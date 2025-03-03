@@ -20,33 +20,33 @@ This project aims to **train and evaluate a machine learning model** to classify
 
 This repository contains all the necessary files and scripts for a loan eligibility prediction system using machine learning. Below is the structure of the project:  
 
-### **1. all_models/**  
+#### **1. all_models/**  
 This folder contains scripts for various machine learning models, including:  
 - Deep Learning  
 - Logistic Regression  
 - Random Forest  
 - XGBoost  
 
-### **2. app_files/**  
+#### **2. app_files/**  
 Contains files required for the web application and API:  
 - **App2.py** – API script for predicting loan eligibility using the trained XGBoost model.  
 - **feature_columns.pkl** – Stores feature column names in `.pkl` format, used to process user-inputted features.  
 - **xgboost_model.pkl** – Trained XGBoost model saved in `.pkl` format for making predictions.  
 - **index.html** – Webpage script where users input personal and financial details to predict loan eligibility.  
 
-### **3. Images/**  
+#### **3. Images/**  
 Stores images.  
 
-### **4. Resource/**  
+#### **4. Resource/**  
 Contains raw and cleaned CSV files used for data processing and analysis.  
 
-### **5. data_cleaning.ipynb**  
+#### **5. data_cleaning.ipynb**  
 Jupyter Notebook for cleaning raw data and preparing it for analysis and model training.  
 
-### **6. ERD.sql**  
+#### **6. ERD.sql**  
 SQL schema used for setting up the PostgreSQL database.  
 
-### **7. Installed_packages.txt**  
+#### **7. Installed_packages.txt**  
 List of required Python packages for the project. 
 
 ## Instructions for Using the Project
