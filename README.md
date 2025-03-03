@@ -31,7 +31,7 @@ Ensure PostgreSQL is installed and running. Import the database schema from sche
 * Start the Flask server: python app2.py
 * Ensure you have configured your database connection properly. Use your PostgreSQL password in the password field of your configuration
 Access the API at http://localhost:5000/. 
-View and interact with the Application: Open the index.html file in your web browser. Fill up the form and click "Predict Loan Eligibility".
+<p>View and interact with the Application: Open the index.html file in your web browser. Fill up the form and click "Predict Loan Eligibility".
 
 ## Data Sourse: 
 The dataset for this project was sourced from **Kaggle**. It includes information on customer demographics and financial details.  
