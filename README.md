@@ -56,9 +56,10 @@ https://github.com/ruprekhab/Loan-Eligibility.git
 2. Set Up the Environment:
 
 Run the following command to install dependencies:  
-
 ```bash  
 pip install -r Installed_packages.txt 
+```
+
 
 Ensure PostgreSQL is installed and running. Import the database schema from schema.sql file and data using the CSV files in the output folder.
 
