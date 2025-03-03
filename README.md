@@ -242,6 +242,7 @@ The home end point just displays a message that the API is running. The main API
 ## HTML
 This webpage allows users to input their personal and financial details to predict their loan eligibility. It sends the form data to the backend Flask API, which processes the information and returns whether the loan is approved or not.
 Input fields are age, income, home ownership, employment duration, loan purpose, loan grade, loan amount, interest rate, past default status, and credit history length.
+
 **How to Use:**
 Fill in the form with your details.
 Click the "Predict Loan Eligibility" button.
