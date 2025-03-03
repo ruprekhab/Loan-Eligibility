@@ -108,6 +108,7 @@ Objective: Identifying factors that influence loan defaults.
 
 
 ## Machine Learning Models:
+To test the machine learning models, data was retrieved from PostgreSQL using SQLAlchemy.
 
 ### Deep learning
 * **Preprocess the data:**
