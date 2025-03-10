@@ -65,7 +65,7 @@ Ensure PostgreSQL is installed and running. Import the database schema from sche
 Access the API at http://localhost:5000/. 
 <p>View and interact with the Application: Open the index.html file in your web browser. Fill up the form and click "Predict Loan Eligibility".
 
-## Data Sourse: 
+## Data Source: 
 The dataset for this project was sourced from **Kaggle**. It includes information on customer demographics and financial details.  
 **Dataset Link:** [Credit Risk Dataset on Kaggle](https://www.kaggle.com/datasets/laotse/credit-risk-dataset)
 
