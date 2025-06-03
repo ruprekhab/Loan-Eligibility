@@ -75,7 +75,7 @@ The dataset for this project was sourced from **Kaggle**. It includes informatio
 - Analysis was conducted to **prevent biases** and ensure fairness in loan classification.  
 
 ## About Dataset: 
-A detailed breakdown of the dataset structure: 
+A detailed breakdown of the dataset structure: <br>
 <img src="images/dataset_info.png" alt="Dataset Info" width="500"/>
 
 
@@ -140,7 +140,7 @@ Objective: Identifying factors that influence loan defaults.
 
 
 ## Machine Learning Models:
-To test the machine learning models, data was retrieved from PostgreSQL using SQLAlchemy. 
+To train the machine learning models, data was retrieved from PostgreSQL using SQLAlchemy. 
 * **Preprocess the data:**
     * Target variable (y): loan_status
     * Features variable (X): person_age, person_income, person_home_ownership, person_emp_length, loan_intent, loan_grade, loan_amnt, loan_int_rate, loan_status, loan_percent_income, cb_person_default_on_file, cb_preson_cred_hist_length.
